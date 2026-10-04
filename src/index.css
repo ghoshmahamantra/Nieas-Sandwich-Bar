@@ -1,0 +1,387 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-sage: #49655B;
+    --color-sage-dark: #374C44;
+    --color-sage-deep: #2B3D36;
+    --color-sage-light: #5B7B70;
+    --color-sage-card: #3D554C;
+    --color-yellow: #F5E086;
+    --color-yellow-hover: #F8E79B;
+    --color-yellow-light: #FDF4CD;
+    --color-cream: #FBF9F2;
+    --color-cream-soft: #EDE8DB;
+    --color-terracotta: #D96B43;
+    --color-mustard: #e1ad01;
+    --color-mustard-hover: #cca000;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: clip;
+    max-width: 100vw;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--color-cream);
+    background-color: var(--color-sage);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+    max-width: 100vw;
+    width: 100%;
+  }
+
+  /* Always keep the navbar anchored at the top when scrolling */
+  header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 50 !important;
+  }
+}
+
+/* ========================================================
+   APPLE LIQUID GLASS & REALISTIC LIQUID JIGGLE PHYSICS
+   (Toggleable via Owner Portal & html[data-liquid-glass])
+   ======================================================== */
+
+@keyframes liquid-crystal-jiggle {
+  0% {
+    transform: scale(1, 1);
+  }
+  18% {
+    transform: scale(0.89, 0.93) translateY(1.5px);
+  }
+  38% {
+    transform: scale(1.085, 0.95) translateY(-1.5px);
+  }
+  68% {
+    transform: scale(0.965, 1.035) translateY(0.8px);
+  }
+  76% {
+    transform: scale(1.02, 0.99) translateY(-0.3px);
+  }
+  90% {
+    transform: scale(0.995, 1.005) translateY(0.1px);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+
+/* Exempt brand logo from liquid glass distortion and jiggle */
+.brand-logo-btn,
+.logo-no-liquid {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
+  animation: none !important;
+}
+
+/* 1. UNIVERSAL LIQUID GLASS BUTTONS & CONTROLS (Active when liquid glass is enabled) */
+html:not([data-liquid-glass="false"]) button:not(:disabled):not(.logo-no-liquid):not(.brand-logo-btn),
+html:not([data-liquid-glass="false"]) [role="button"]:not(:disabled):not(.logo-no-liquid):not(.brand-logo-btn),
+html:not([data-liquid-glass="false"]) .btn-press:not(:disabled),
+html:not([data-liquid-glass="false"]) a.btn-liquid,
+html:not([data-liquid-glass="false"]) .liquid-crystal-btn {
+  position: relative;
+  transition: transform 0.16s cubic-bezier(0.25, 1.2, 0.5, 1),
+              box-shadow 0.16s cubic-bezier(0.25, 1.2, 0.5, 1),
+              background-color 0.16s ease-out;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  transform: translateZ(0);
+  box-shadow:
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.2),
+    inset 0 0 8px 0 rgba(255, 255, 255, 0.08),
+    0 4px 14px -2px rgba(0, 0, 0, 0.24),
+    0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+/* Realistic fluid hover swelling with GPU acceleration */
+html:not([data-liquid-glass="false"]) button:hover:not(:disabled):not(.logo-no-liquid):not(.brand-logo-btn),
+html:not([data-liquid-glass="false"]) [role="button"]:hover:not(:disabled):not(.logo-no-liquid):not(.brand-logo-btn),
+html:not([data-liquid-glass="false"]) .btn-press:hover:not(:disabled) {
+  transform: scale(1.025) translateY(-1px) translateZ(0);
+  box-shadow:
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.65),
+    inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.22),
+    inset 0 0 12px 0 rgba(255, 255, 255, 0.12),
+    0 8px 22px -3px rgba(0, 0, 0, 0.32),
+    0 2px 4px 0 rgba(0, 0, 0, 0.16);
+}
+
+/* Liquid droplet compression on press */
+html:not([data-liquid-glass="false"]) button:active:not(:disabled):not(.logo-no-liquid):not(.brand-logo-btn),
+html:not([data-liquid-glass="false"]) [role="button"]:active:not(:disabled):not(.logo-no-liquid):not(.brand-logo-btn),
+html:not([data-liquid-glass="false"]) .btn-press:active:not(:disabled) {
+  transform: scale(0.92, 0.94) translateY(1.5px) translateZ(0);
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.3),
+    0 2px 6px rgba(0, 0, 0, 0.15);
+  transition-duration: 0.05s;
+}
+
+/* Decaying harmonic liquid spring jiggle applied on tap / click */
+html:not([data-liquid-glass="false"]) .liquid-jiggle-active:not(.logo-no-liquid):not(.brand-logo-btn) {
+  animation: liquid-crystal-jiggle 0.42s cubic-bezier(0.25, 1.45, 0.4, 1) !important;
+  will-change: transform;
+}
+
+/* 2. SPECIFIC LIQUID GLASS MATERIAL VARIANTS */
+
+/* Liquid Gold (Brand Signature) */
+html:not([data-liquid-glass="false"]) .liquid-gold,
+html:not([data-liquid-glass="false"]) button.bg-\[\#F5E086\],
+html:not([data-liquid-glass="false"]) button.bg-\[\#e1ad01\] {
+  background: linear-gradient(135deg, #F5E086 0%, #E5CE6E 50%, #CBB353 100%) !important;
+  color: #1E2B25 !important;
+  border-color: rgba(255, 255, 255, 0.65) !important;
+  box-shadow:
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -2px 3px 0 rgba(160, 130, 20, 0.4),
+    0 6px 20px -2px rgba(245, 224, 134, 0.45),
+    0 2px 4px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Liquid Glass Translucent (Refraction active only on translucent elements) */
+html:not([data-liquid-glass="false"]) .liquid-glass,
+html:not([data-liquid-glass="false"]) button.bg-white\/5,
+html:not([data-liquid-glass="false"]) button.bg-white\/10 {
+  background: rgba(36, 51, 45, 0.72) !important;
+  color: #FBF9F2 !important;
+  border-color: rgba(255, 255, 255, 0.28) !important;
+  backdrop-filter: blur(8px) saturate(150%);
+  -webkit-backdrop-filter: blur(8px) saturate(150%);
+  box-shadow:
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1.5px 2px 0 rgba(0, 0, 0, 0.35),
+    0 4px 16px -2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Liquid Emerald */
+html:not([data-liquid-glass="false"]) .liquid-emerald,
+html:not([data-liquid-glass="false"]) button.bg-emerald-500,
+html:not([data-liquid-glass="false"]) button.bg-emerald-600 {
+  background: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.55) !important;
+  box-shadow:
+    inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -2px 3px 0 rgba(4, 120, 87, 0.4),
+    0 6px 20px -2px rgba(16, 185, 129, 0.4),
+    0 2px 4px 0 rgba(0, 0, 0, 0.15) !important;
+}
+
+/* 3. HARDWARE-ACCELERATED LIQUID GLASS FOR CARDS, MODALS, SHEETS & PANELS */
+/* Targeted glass refraction for explicitly marked liquid containers */
+html:not([data-liquid-glass="false"]) .card-liquid,
+html:not([data-liquid-glass="false"]) .modal-liquid {
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
+  transform: translateZ(0);
+}
+
+/* Specular edge highlights on cards (Rich liquid reflection without excessive blur overhead) */
+html:not([data-liquid-glass="false"]) .rounded-3xl.bg-\[\#374C44\]\/80,
+html:not([data-liquid-glass="false"]) .rounded-3xl.bg-\[\#374C44\]\/90,
+html:not([data-liquid-glass="false"]) .rounded-3xl.bg-\[\#374C44\],
+html:not([data-liquid-glass="false"]) .rounded-2xl.bg-\[\#24332D\],
+html:not([data-liquid-glass="false"]) .rounded-2xl.bg-\[\#23352E\],
+html:not([data-liquid-glass="false"]) .rounded-2xl.bg-\[\#1E2B25\] {
+  box-shadow:
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.2),
+    0 8px 30px -6px rgba(0, 0, 0, 0.35);
+  border-color: rgba(245, 224, 134, 0.22);
+}
+
+/* Liquid Glass Header (GPU isolated) */
+html:not([data-liquid-glass="false"]) header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  backdrop-filter: blur(12px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(160%) !important;
+  transform: translateZ(0);
+  box-shadow:
+    inset 0 -1px 0 0 rgba(255, 255, 255, 0.18),
+    0 8px 24px -4px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Liquid Glass Floating Checkout & Bar Elements */
+html:not([data-liquid-glass="false"]) aside[aria-label="Order summary bar"] {
+  backdrop-filter: blur(14px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(160%) !important;
+  transform: translateZ(0);
+  box-shadow:
+    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.35),
+    0 -10px 35px -5px rgba(0, 0, 0, 0.45) !important;
+}
+
+/* Liquid Glass Modals Overlay */
+html:not([data-liquid-glass="false"]) .fixed.inset-0.bg-black\/70,
+html:not([data-liquid-glass="false"]) .fixed.inset-0.bg-black\/60,
+html:not([data-liquid-glass="false"]) .fixed.inset-0.bg-black\/80 {
+  backdrop-filter: blur(8px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(140%) !important;
+}
+
+/* Dynamic Font Family Controls */
+html[data-font-family="outfit"] body,
+html[data-font-family="outfit"] .font-body {
+  font-family: 'Outfit', sans-serif !important;
+}
+html[data-font-family="jakarta"] body,
+html[data-font-family="jakarta"] .font-body {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+}
+html[data-font-family="playfair"] body,
+html[data-font-family="playfair"] .font-body {
+  font-family: 'Playfair Display', Georgia, serif !important;
+}
+html[data-font-family="inter"] body,
+html[data-font-family="inter"] .font-body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* Dynamic Font Scale Controls */
+html[data-font-scale="normal"] {
+  font-size: 16px;
+}
+html[data-font-scale="medium"] {
+  font-size: 17.5px;
+}
+html[data-font-scale="large"] {
+  font-size: 19.5px;
+}
+html[data-font-scale="xlarge"] {
+  font-size: 21.5px;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #24342E;
+}
+::-webkit-scrollbar-thumb {
+  background: #3D554C;
+  border-radius: 9999px;
+  border: 2px solid #24342E;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F5E086;
+}
+
+.font-niea {
+  font-family: 'Fredoka', cursive, sans-serif;
+}
+
+.font-sublogo {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.28em;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Glass & Card subtle depth */
+.sage-card {
+  background-color: rgba(43, 61, 54, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 224, 134, 0.12);
+}
+
+.sage-card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sage-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(245, 224, 134, 0.3);
+  box-shadow: 0 12px 28px -8px rgba(27, 39, 34, 0.5);
+}
+
+/* Heart Float Animation for Petting Cat */
+@keyframes heartFloat {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-28px) scale(1.2) rotate(-8deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-56px) scale(1.4) rotate(12deg);
+  }
+}
+
+.animate-heart-float {
+  animation: heartFloat 1s ease-out forwards;
+}
+
+/* Eye blink animation */
+@keyframes catBlink {
+  0%, 90%, 100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+.cat-eyelid {
+  transform-origin: center;
+  animation: catBlink 4s infinite ease-in-out;
+}
+
+/* Tail realistic sinusoidal wag */
+@keyframes tailWag {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+.animate-tail-wag {
+  transform-origin: 285px 170px;
+  animation: tailWag 3.2s ease-in-out infinite;
+}
+
+/* Custom scrollbar matching sage & pastel yellow theme */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #374C44;
+}
+::-webkit-scrollbar-thumb {
+  background: #5B7B70;
+  border-radius: 9999px;
+  border: 1px solid #49655B;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F5E086;
+}
+

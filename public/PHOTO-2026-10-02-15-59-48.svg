@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <!-- Background & Vignette Gradients -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080C0F" />
+      <stop offset="100%" stop-color="#11181D" />
+    </linearGradient>
+    <radialGradient id="signGlow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.9" />
+      <stop offset="70%" stop-color="#0284C7" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0369A1" stop-opacity="0.7" />
+    </radialGradient>
+    <radialGradient id="warmInteriorGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FDE047" stop-opacity="0.95" />
+      <stop offset="40%" stop-color="#EAB308" stop-opacity="0.85" />
+      <stop offset="80%" stop-color="#CA8A04" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#164E63" stop-opacity="0.8" />
+    </radialGradient>
+    <radialGradient id="lampLight1" cx="40%" cy="35%" r="35%">
+      <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.85" />
+      <stop offset="60%" stop-color="#F59E0B" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="lampLight2" cx="58%" cy="35%" r="35%">
+      <stop offset="0%" stop-color="#FEF08A" stop-opacity="0.85" />
+      <stop offset="60%" stop-color="#F59E0B" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="lanternLeft" cx="120" cy="350" r="160" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDE047" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#F59E0B" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="lanternRight" cx="835" cy="310" r="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FDE047" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#F59E0B" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="awningShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1F2937" />
+      <stop offset="85%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="patioFloor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9A3412" />
+      <stop offset="40%" stop-color="#7C2D12" />
+      <stop offset="100%" stop-color="#371B11" />
+    </linearGradient>
+    <linearGradient id="counterTeal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0D9488" />
+      <stop offset="100%" stop-color="#115E59" />
+    </linearGradient>
+  </defs>
+
+  <!-- Night Sky & Building Exterior -->
+  <rect width="1600" height="900" fill="url(#skyGrad)" />
+
+  <!-- Building Pillars & Surrounding Architecture -->
+  <rect x="0" y="0" width="280" height="900" fill="#0F172A" />
+  <rect x="1320" y="0" width="280" height="900" fill="#0F172A" />
+  <rect x="260" y="0" width="1080" height="120" fill="#1E293B" />
+
+  <!-- 1. CAFE FACIA SIGNBOARD (Bright Glowing Cyan Blue) -->
+  <rect x="290" y="10" width="980" height="115" rx="8" fill="url(#signGlow)" stroke="#7DD3FC" stroke-width="3" />
+  
+  <!-- Sign Ambient Glow Effect -->
+  <rect x="280" y="0" width="1000" height="135" rx="14" fill="#38BDF8" opacity="0.15" filter="blur(10px)" />
+
+  <!-- Wordmark Text: NiEA'S with glowing drop-shadow -->
+  <g id="sign-text" text-anchor="middle" font-family="'Arial Black', 'Impact', sans-serif">
+    <!-- White Sign Letters -->
+    <text x="780" y="92" font-size="82" font-weight="900" fill="#FFFFFF" letter-spacing="2">NiEA'S</text>
+    
+    <!-- Cat Ears & Face on the apostrophe/E -->
+    <polygon points="770,26 776,38 764,38" fill="#000000" />
+    <polygon points="786,26 792,38 780,38" fill="#000000" />
+    <circle cx="778" cy="42" r="9" fill="#000000" />
+    <circle cx="775" cy="41" r="2" fill="#FFFFFF" />
+    <circle cx="781" cy="41" r="2" fill="#FFFFFF" />
+  </g>
+
+  <!-- 2. BLACK SCALLOPED AWNING -->
+  <path d="M 260 120 L 1300 120 L 1320 215 L 240 215 Z" fill="url(#awningShade)" />
+  
+  <!-- Awning scallop trim edge -->
+  <path d="M 240 215 Q 260 230 280 215 Q 300 230 320 215 Q 340 230 360 215 Q 380 230 400 215 Q 420 230 440 215 Q 460 230 480 215 Q 500 230 520 215 Q 540 230 560 215 Q 580 230 600 215 Q 620 230 640 215 Q 660 230 680 215 Q 700 230 720 215 Q 740 230 760 215 Q 780 230 800 215 Q 820 230 840 215 Q 860 230 880 215 Q 900 230 920 215 Q 940 230 960 215 Q 980 230 1000 215 Q 1020 230 1040 215 Q 1060 230 1080 215 Q 1100 230 1120 215 Q 1140 230 1160 215 Q 1180 230 1200 215 Q 1220 230 1240 215 Q 1260 230 1280 215 Q 1300 230 1320 215" fill="none" stroke="#374151" stroke-width="4" />
+
+  <!-- Deep Shadow Under Awning -->
+  <rect x="260" y="215" width="1040" height="35" fill="#000000" opacity="0.75" />
+
+  <!-- 3. CAFE INTERIOR (Golden Yellow Wall & Cozy Ambiance) -->
+  <rect x="330" y="225" width="860" height="255" fill="url(#warmInteriorGlow)" />
+
+  <!-- Yellow Wall Accent Panels & Shelf details -->
+  <rect x="440" y="280" width="230" height="80" fill="#CA8A04" opacity="0.3" />
+  <line x1="430" y1="320" x2="680" y2="320" stroke="#78350F" stroke-width="4" />
+  <line x1="430" y1="355" x2="680" y2="355" stroke="#78350F" stroke-width="4" />
+
+  <!-- Iconic Wall Slogan Sign: AIN'T YOUR EX. WON'T DISAPPOINT -->
+  <g id="wall-slogan">
+    <rect x="690" y="235" width="185" height="65" rx="6" fill="#FEF9C3" stroke="#713F12" stroke-width="2" />
+    <text x="782" y="260" font-family="'Arial Black', sans-serif" font-size="14" font-weight="900" fill="#1E1B18" text-anchor="middle" letter-spacing="0.5">AIN'T YOUR EX.</text>
+    <text x="782" y="285" font-family="'Arial Black', sans-serif" font-size="14" font-weight="900" fill="#1E1B18" text-anchor="middle" letter-spacing="0.5">WON'T DISAPPOINT</text>
+  </g>
+
+  <!-- Hanging Industrial Pendant Lights -->
+  <!-- Lamp 1 -->
+  <line x1="670" y1="220" x2="670" y2="305" stroke="#0F172A" stroke-width="3" />
+  <path d="M 655 305 L 685 305 L 690 322 L 650 322 Z" fill="#1E293B" />
+  <circle cx="670" cy="325" r="8" fill="#FEF08A" />
+  <circle cx="670" cy="330" r="85" fill="url(#lampLight1)" />
+
+  <!-- Lamp 2 -->
+  <line x1="930" y1="220" x2="930" y2="305" stroke="#0F172A" stroke-width="3" />
+  <path d="M 915 305 L 945 305 L 950 322 L 910 322 Z" fill="#1E293B" />
+  <circle cx="930" cy="325" r="8" fill="#FEF08A" />
+  <circle cx="930" cy="330" r="85" fill="url(#lampLight2)" />
+
+  <!-- Cafe Counter (Teal Paneling with Under-Ledge Light) -->
+  <rect x="330" y="435" width="860" height="55" fill="url(#counterTeal)" />
+  <!-- Counter Top Surface -->
+  <rect x="320" y="428" width="880" height="12" fill="#FDE047" opacity="0.9" />
+  <!-- Glowing green LED strip under counter -->
+  <rect x="320" y="440" width="880" height="5" fill="#4ADE80" opacity="0.95" filter="blur(2px)" />
+
+  <!-- Staff & Customers Silhouette inside counter -->
+  <!-- Staff in red -->
+  <circle cx="615" cy="375" r="18" fill="#1E293B" />
+  <rect x="595" y="392" width="40" height="70" rx="6" fill="#DC2626" />
+  <!-- Customer in green -->
+  <circle cx="425" cy="395" r="16" fill="#1E293B" />
+  <rect x="410" y="412" width="32" height="60" rx="5" fill="#84CC16" />
+  <!-- Staff near espresso machine -->
+  <circle cx="880" cy="390" r="16" fill="#1E293B" />
+  <rect x="865" y="406" width="35" height="65" rx="5" fill="#0284C7" />
+
+  <!-- Wall Sconce Coach Lanterns -->
+  <!-- Left Lantern -->
+  <circle cx="190" cy="350" r="90" fill="url(#lanternLeft)" />
+  <rect x="180" y="325" width="20" height="45" rx="3" fill="#FDE047" stroke="#1F2937" stroke-width="4" />
+  <!-- Right Lantern -->
+  <circle cx="1340" cy="310" r="85" fill="url(#lanternRight)" />
+  <rect x="1330" y="290" width="18" height="40" rx="3" fill="#FDE047" stroke="#1F2937" stroke-width="4" />
+
+  <!-- 4. PATIO FLOOR (Warm Terracotta Tiles) -->
+  <rect x="0" y="480" width="1600" height="420" fill="url(#patioFloor)" />
+  
+  <!-- Tile grid perspective lines -->
+  <g stroke="#571B0B" stroke-width="2" opacity="0.5">
+    <line x1="0" y1="530" x2="1600" y2="530" />
+    <line x1="0" y1="600" x2="1600" y2="600" />
+    <line x1="0" y1="690" x2="1600" y2="690" />
+    <line x1="0" y1="800" x2="1600" y2="800" />
+    <line x1="300" y1="480" x2="150" y2="900" />
+    <line x1="550" y1="480" x2="450" y2="900" />
+    <line x1="800" y1="480" x2="800" y2="900" />
+    <line x1="1050" y1="480" x2="1150" y2="900" />
+    <line x1="1300" y1="480" x2="1450" y2="900" />
+  </g>
+
+  <!-- 5. OUTDOOR SEATED PATRONS & GREEN PATIO TABLES -->
+  <!-- Left Center Table & Seated Couple -->
+  <g id="left-table">
+    <ellipse cx="680" cy="660" rx="65" ry="22" fill="#065F46" stroke="#047857" stroke-width="3" />
+    <!-- Customer 1 -->
+    <circle cx="630" cy="575" r="20" fill="#334155" />
+    <rect x="610" y="595" width="42" height="75" rx="8" fill="#F59E0B" />
+    <rect x="612" y="670" width="36" height="70" rx="6" fill="#1E293B" />
+    <!-- Metal Chair Back -->
+    <path d="M 590 620 L 610 740" stroke="#0F172A" stroke-width="4" />
+  </g>
+
+  <!-- Center Right Table with Patrons enjoying food & drinks -->
+  <g id="right-table">
+    <ellipse cx="1020" cy="680" rx="85" ry="28" fill="#065F46" stroke="#047857" stroke-width="3" />
+    <!-- Drinks on table -->
+    <circle cx="1010" cy="672" r="6" fill="#38BDF8" opacity="0.8" />
+    <circle cx="1035" cy="675" r="7" fill="#FEF08A" opacity="0.8" />
+    
+    <!-- Customer Facing Table -->
+    <circle cx="945" cy="585" r="21" fill="#334155" />
+    <rect x="925" y="605" width="44" height="80" rx="8" fill="#0F172A" />
+    <rect x="930" y="685" width="38" height="75" rx="6" fill="#334155" />
+
+    <!-- Customer Opposite -->
+    <circle cx="1090" cy="605" r="20" fill="#334155" />
+    <rect x="1068" y="625" width="46" height="80" rx="8" fill="#CBD5E1" />
+    <rect x="1070" y="705" width="40" height="75" rx="6" fill="#0F172A" />
+  </g>
+
+  <!-- Foreground Figures (Standing Customer in Burgundy shirt on left) -->
+  <g id="foreground-man">
+    <circle cx="350" cy="450" r="38" fill="#0F172A" />
+    <rect x="285" y="490" width="130" height="220" rx="24" fill="#831843" />
+    <rect x="295" y="710" width="110" height="190" rx="16" fill="#1E3A8A" />
+  </g>
+
+  <!-- Potted Plants & Foliage on Patio Borders -->
+  <!-- Left Potted Plant -->
+  <rect x="40" y="730" width="65" height="80" fill="#78350F" rx="6" />
+  <circle cx="72" cy="700" r="45" fill="#065F46" />
+  <circle cx="55" cy="665" r="35" fill="#047857" />
+  <circle cx="90" cy="675" r="38" fill="#10B981" />
+
+  <!-- Right Potted Tropical Palms -->
+  <rect x="1220" y="650" width="75" height="95" fill="#78350F" rx="8" />
+  <ellipse cx="1260" cy="560" rx="75" ry="120" fill="#065F46" opacity="0.9" />
+  <ellipse cx="1280" cy="520" rx="60" ry="100" fill="#047857" opacity="0.9" />
+  <ellipse cx="1230" cy="540" rx="65" ry="110" fill="#10B981" opacity="0.8" />
+
+  <!-- Metal Gate Grill on Sides -->
+  <g stroke="#0F172A" stroke-width="6" opacity="0.8">
+    <line x1="40" y1="280" x2="40" y2="900" />
+    <line x1="80" y1="280" x2="80" y2="900" />
+    <line x1="120" y1="280" x2="120" y2="900" />
+    <line x1="1480" y1="280" x2="1480" y2="900" />
+    <line x1="1520" y1="280" x2="1520" y2="900" />
+    <line x1="1560" y1="280" x2="1560" y2="900" />
+  </g>
+
+  <!-- The Beloved Cafe Dog Sleeping on Patio Tiles in Center-Front -->
+  <g id="cafe-dog" transform="translate(700, 840)">
+    <!-- Golden brown body -->
+    <ellipse cx="55" cy="20" rx="50" ry="22" fill="#B45309" />
+    <!-- Head resting down -->
+    <circle cx="15" cy="24" r="16" fill="#92400E" />
+    <polygon points="10,12 18,6 18,18" fill="#78350F" />
+    <!-- Tail -->
+    <path d="M 100 22 Q 115 15 120 28" stroke="#92400E" stroke-width="7" fill="none" stroke-linecap="round" />
+    <!-- Paws -->
+    <ellipse cx="28" cy="36" rx="12" ry="6" fill="#D97706" />
+    <ellipse cx="68" cy="36" rx="14" ry="7" fill="#D97706" />
+  </g>
+
+  <!-- Ambient Cinematic Warmth & Vignette -->
+  <radialGradient id="cinemaVignette" cx="50%" cy="45%" r="70%">
+    <stop offset="40%" stop-color="#000000" stop-opacity="0" />
+    <stop offset="80%" stop-color="#000000" stop-opacity="0.45" />
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.85" />
+  </radialGradient>
+  <rect width="1600" height="900" fill="url(#cinemaVignette)" pointer-events="none" />
+</svg>

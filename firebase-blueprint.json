@@ -1,0 +1,125 @@
+{
+  "entities": {
+    "StoreSettings": {
+      "title": "StoreSettings",
+      "description": "Global store configurations including website content, pre-booking windows, financials, and live seating.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "MenuItem": {
+      "title": "MenuItem",
+      "description": "Menu catalog items, stock limits, prices, categories, and availability.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "price": { "type": "number" },
+        "category": { "type": "string" },
+        "isAvailable": { "type": "boolean" },
+        "stockLeft": { "type": "number" }
+      },
+      "required": ["id", "name", "price", "category"]
+    },
+    "OrderRecord": {
+      "title": "OrderRecord",
+      "description": "Customer and POS live orders with live statuses, token numbers, and timers.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "orderNumber": { "type": "string" },
+        "tokenNumber": { "type": "string" },
+        "orderType": { "type": "string" },
+        "grandTotal": { "type": "number" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "orderNumber", "grandTotal", "status"]
+    },
+    "ReservationRecord": {
+      "title": "ReservationRecord",
+      "description": "Table and cat lounge reservations with date, timeSlot, and seating area.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "date": { "type": "string" },
+        "timeSlot": { "type": "string" },
+        "guestCount": { "type": "number" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "customerName", "customerPhone", "date", "timeSlot", "guestCount", "status"]
+    },
+    "PosSalesRecord": {
+      "title": "PosSalesRecord",
+      "description": "POS offline register records and daily sales ledger.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "date": { "type": "string" },
+        "cashSales": { "type": "number" },
+        "upiSales": { "type": "number" },
+        "totalOrders": { "type": "number" }
+      },
+      "required": ["id", "date", "cashSales", "upiSales"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated user profile and paws loyalty points.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "pawsPoints": { "type": "number" },
+        "stampsCount": { "type": "number" }
+      },
+      "required": ["uid"]
+    }
+  },
+  "firestore": {
+    "/settings/{settingId}": {
+      "schema": "StoreSettings",
+      "description": "Store configuration documents (website, prebooking, financial, seating, etc.)"
+    },
+    "/menuItems/{itemId}": {
+      "schema": "MenuItem",
+      "description": "Artisan cafe menu items and dynamic inventory"
+    },
+    "/orders/{orderId}": {
+      "schema": "OrderRecord",
+      "description": "Live orders, kitchen tickets, token numbers, and real-time status"
+    },
+    "/reservations/{reservationId}": {
+      "schema": "ReservationRecord",
+      "description": "Table bookings and cat lounge reservations"
+    },
+    "/posRecords/{recordId}": {
+      "schema": "PosSalesRecord",
+      "description": "Daily offline POS register records"
+    },
+    "/coupons/{couponId}": {
+      "schema": "StoreSettings",
+      "description": "Active promo coupons and discounts"
+    },
+    "/dailyIngredients/{ingredientId}": {
+      "schema": "StoreSettings",
+      "description": "Daily raw materials and slicing log"
+    },
+    "/dailyWastage/{wastageId}": {
+      "schema": "StoreSettings",
+      "description": "Daily wastage and shrinkage log"
+    },
+    "/masterIngredients/{masterId}": {
+      "schema": "StoreSettings",
+      "description": "Master procurement recipe templates"
+    },
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Registered customer profiles and loyalty stamps"
+    }
+  }
+}

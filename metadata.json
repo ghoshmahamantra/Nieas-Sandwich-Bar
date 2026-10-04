@@ -1,0 +1,8 @@
+{
+  "name": "NiEA'S SANDWICH BAR — New Town, Kolkata",
+  "description": "NiEA'S SANDWICH BAR: Artisanal sandwich cafe located in New Town Action Area 1, Kolkata. Handcrafted gourmet sourdough melts, Japanese brioche toasties, fresh bakes, live table bookings & takeaway ordering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

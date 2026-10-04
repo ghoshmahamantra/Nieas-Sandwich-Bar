@@ -1,0 +1,71 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default fallback deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Global Store Configurations & Dynamic Settings
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Menu Catalog & Live Inventory
+    match /menuItems/{itemId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Live Orders, Kitchen Tickets & Token Progress
+    match /orders/{orderId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Table & Cat Lounge Reservations
+    match /reservations/{reservationId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // POS Offline Sales Ledger
+    match /posRecords/{recordId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Active Promo Coupons
+    match /coupons/{couponId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Procurement & Daily Slicing Ledgers
+    match /dailyIngredients/{ingredientId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /dailyWastage/{wastageId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    match /masterIngredients/{masterId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // User Profiles, Orders & Loyalty Stamps
+    match /users/{userId} {
+      allow read: if true;
+      allow write: if true;
+
+      match /{allSubcollections=**} {
+        allow read, write: if true;
+      }
+    }
+  }
+}

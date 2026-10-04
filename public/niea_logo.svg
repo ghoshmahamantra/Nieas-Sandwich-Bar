@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 440" width="660" height="440" fill="none">
+  <!-- Brand: NiEA's - Authentic Tuxedo Cat Wordmark Logo -->
+  
+  <!-- 1. Cat Tail (emerges from right hip, arches out and curves down through the cutouts of E) -->
+  <g id="cat-tail">
+    <path
+      d="M 380 148
+         C 398 156, 408 174, 406 202
+         C 404 232, 394 256, 378 274
+         C 362 290, 344 294, 332 290
+         C 324 286, 324 276, 332 274
+         C 344 272, 356 266, 368 252
+         C 380 236, 388 216, 388 196
+         C 388 178, 382 162, 370 150 Z"
+      fill="#1E1B1B"
+    />
+  </g>
+
+  <!-- 2. Cat Torso (behind top bar of E) -->
+  <g id="cat-body">
+    <path d="M 296 116 L 392 116 L 392 146 L 296 146 Z" fill="#1E1B1B" />
+    <path d="M 330 118 L 358 118 L 358 146 L 330 146 Z" fill="#FFFFFF" />
+  </g>
+
+  <!-- 3. Wordmark Letters "NiEA's" in Authentic Solid Golden Yellow (#F7C869) -->
+  <g id="letters" fill="#F7C869">
+    <!-- Letter N -->
+    <path d="M 42 144 L 102 138 L 166 260 L 166 142 L 204 142 L 206 330 L 152 330 L 90 206 L 90 330 L 46 330 Z" />
+
+    <!-- Letter i -->
+    <circle cx="244" cy="192" r="19" />
+    <path d="M 232 230 C 228 230, 226 233, 226 238 L 226 322 C 226 327, 228 330, 232 330 L 256 330 C 260 330, 262 327, 262 322 L 262 238 C 262 233, 260 230, 256 230 Z" />
+
+    <!-- Letter E with 3 Scalloped Bite Marks on Top-Left & Elongated Lower Block -->
+    <path d="
+      M 398 142
+      L 398 184
+      L 336 184
+      L 336 226
+      L 390 226
+      L 390 264
+      L 336 264
+      L 336 304
+      L 398 304
+      L 398 398
+      L 286 398
+      L 286 206
+      C 296 202, 296 192, 286 184
+      C 298 178, 298 166, 288 158
+      C 298 152, 296 142, 308 142
+      Z
+    " />
+
+    <!-- Letter A with Triangular Inner Counter -->
+    <path d="
+      M 388 330 L 440 150 L 476 150 L 530 330 L 492 330 L 480 298 L 436 298 L 424 330 Z
+      M 458 200 L 444 272 L 472 272 Z
+    " fill-rule="evenodd" />
+
+    <!-- Apostrophe ' -->
+    <path d="M 494 124 C 502 124, 508 130, 508 138 C 508 148, 500 158, 488 168 C 484 171, 480 169, 482 165 C 486 156, 492 148, 492 140 C 492 136, 490 132, 484 130 C 482 126, 488 124, 494 124 Z" />
+
+    <!-- Lowercase Letter s -->
+    <path d="
+      M 552 202
+      C 572 200 598 208 604 226
+      C 606 234 598 242 588 242
+      C 578 242 572 236 568 228
+      C 562 222 556 220 548 220
+      C 538 220 532 226 532 232
+      C 532 240 540 246 556 250
+      C 580 258 602 268 602 292
+      C 602 316 580 330 550 330
+      C 524 330 506 318 502 298
+      C 500 288 508 282 516 282
+      C 525 282 530 288 534 296
+      C 538 302 546 306 556 306
+      C 566 306 572 300 572 292
+      C 572 284 564 278 548 272
+      C 526 264 508 254 508 230
+      C 508 208 528 202 552 202
+      Z
+    " />
+  </g>
+
+  <!-- 4. Tuxedo Cat Head & Paws Perched on 'E' -->
+  <g id="cat-head-and-paws">
+    <!-- Cat Head Base (Black Silhouette) -->
+    <path
+      d="M 284 82
+         L 292 40
+         C 294 36, 300 36, 304 42
+         L 314 68
+         C 324 64, 334 62, 344 62
+         C 354 62, 364 64, 374 68
+         L 384 42
+         C 388 36, 394 36, 396 40
+         L 404 82
+         C 414 96, 414 114, 404 126
+         C 392 138, 376 142, 344 142
+         C 312 142, 296 138, 284 126
+         C 274 114, 274 96, 284 82 Z"
+      fill="#1E1B1B"
+    />
+
+    <!-- Pink Inner Ears -->
+    <polygon points="293,48 288,78 308,68" fill="#F498A8" />
+    <polygon points="395,48 380,68 400,78" fill="#F498A8" />
+
+    <!-- White Tuxedo Face Blaze & Cheeks -->
+    <path
+      d="M 344 64
+         C 340 74, 338 82, 332 90
+         C 320 96, 294 102, 294 118
+         C 294 134, 318 141, 344 141
+         C 370 141, 394 134, 394 118
+         C 394 102, 368 96, 356 90
+         C 350 82, 348 74, 344 64 Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- Thin White Whiskers -->
+    <g stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round" opacity="0.95">
+      <!-- Left Whiskers -->
+      <path d="M 298 112 C 282 109, 266 109, 252 113" />
+      <path d="M 298 118 C 280 118, 262 120, 248 125" />
+      <path d="M 298 124 C 284 128, 270 134, 256 140" />
+
+      <!-- Right Whiskers -->
+      <path d="M 390 112 C 406 109, 422 109, 436 113" />
+      <path d="M 390 118 C 408 118, 426 120, 440 125" />
+      <path d="M 390 124 C 404 128, 418 134, 432 140" />
+    </g>
+
+    <!-- Eyes (Big Expressive Cartoon Eyes) -->
+    <g id="left-eye">
+      <ellipse cx="324" cy="95" rx="12.5" ry="13.5" fill="#FFFFFF" stroke="#1E1B1B" stroke-width="1.6" />
+      <circle cx="326.5" cy="96.5" r="7.2" fill="#1E1B1B" />
+      <circle cx="324" cy="93" r="2.5" fill="#FFFFFF" />
+    </g>
+
+    <g id="right-eye">
+      <ellipse cx="364" cy="95" rx="12.5" ry="13.5" fill="#FFFFFF" stroke="#1E1B1B" stroke-width="1.6" />
+      <circle cx="366.5" cy="96.5" r="7.2" fill="#1E1B1B" />
+      <circle cx="364" cy="93" r="2.5" fill="#FFFFFF" />
+    </g>
+
+    <!-- Pink Inverted Triangle Nose -->
+    <polygon points="344,118 338,111 350,111" fill="#F498A8" />
+
+    <!-- Smiling Cat Mouth Lines -->
+    <path
+      d="M 344 118 L 344 124 C 340 127, 336 127, 332 124 M 344 124 C 348 127, 352 127, 356 124"
+      stroke="#1E1B1B"
+      stroke-width="1.5"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    <!-- Left Paw Gripping Top of E (with Pink Toe Beans) -->
+    <g id="left-paw">
+      <path d="M 284 142 C 284 136, 290 134, 296 134 C 303 134, 308 137, 308 144 L 308 158 C 308 163, 303 166, 296 166 C 290 166, 284 162, 284 156 Z" fill="#FFFFFF" stroke="#DDD6C8" stroke-width="0.9" />
+      <circle cx="290" cy="159" r="1.6" fill="#F498A8" />
+      <circle cx="296" cy="161" r="1.8" fill="#F498A8" />
+      <circle cx="302" cy="159" r="1.6" fill="#F498A8" />
+    </g>
+
+    <!-- Right Paw Gripping Top of E (with Pink Toe Beans) -->
+    <g id="right-paw">
+      <path d="M 380 142 C 380 136, 386 134, 392 134 C 399 134, 404 137, 404 144 L 404 158 C 404 163, 399 166, 392 166 C 386 166, 380 162, 380 156 Z" fill="#FFFFFF" stroke="#DDD6C8" stroke-width="0.9" />
+      <circle cx="386" cy="159" r="1.6" fill="#F498A8" />
+      <circle cx="392" cy="161" r="1.8" fill="#F498A8" />
+      <circle cx="398" cy="159" r="1.6" fill="#F498A8" />
+    </g>
+  </g>
+</svg>
