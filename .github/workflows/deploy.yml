@@ -47,7 +47,7 @@ jobs:
           </IfModule>
           EOF
 
-      - name: 6. Deploy to Hostinger via FTP
+      - name: 6. Force Deploy to Hostinger public_html
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: "178.16.136.117"
@@ -56,4 +56,5 @@ jobs:
           protocol: ftp
           port: 21
           local-dir: ./dist/
-          server-dir: domains/nieas.in/public_html/
+          server-dir: ./public_html/
+          dangerous-clean-slate: true
