@@ -17,10 +17,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
 
       - name: 3. Install Dependencies
-        run: npm ci
+        run: npm install
 
       - name: 4. Build Production Website
         run: npm run build
@@ -34,7 +33,7 @@ jobs:
           VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
           VITE_RAZORPAY_KEY_ID: ${{ secrets.VITE_RAZORPAY_KEY_ID }}
 
-      - name: 5. Create .htaccess for React Client Routing
+      - name: 5. Create .htaccess for React Routing
         run: |
           cat << 'EOF' > dist/.htaccess
           <IfModule mod_rewrite.c>
